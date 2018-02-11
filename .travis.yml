@@ -19,12 +19,12 @@ matrix:
   - os: osx
     language: generic
     env: 
-      - PYTHON='3.6.1'
+      - PYTHON='3.6.2'
       - TOXENV=py36
   - os: osx
     language: generic
     env:
-      - PYTHON='3.5.3'
+      - PYTHON='3.5.2'
       - TOXENV=py35
   - os: osx
     language: generic
@@ -39,7 +39,7 @@ matrix:
   - os: osx
     language: generic
     env: 
-      - PYTHON='2.7.12'
+      - PYTHON='2.7.13'
       - TOXENV=py27
   - sudo: required
     services:
@@ -50,6 +50,11 @@ matrix:
       - docker
     env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686
          PRE_CMD=linux32
+
+branches:
+  only:
+    - master
+    - /^\d\.[\d.]+$/
 
 before_install:
 - |
@@ -68,7 +73,6 @@ before_install:
   echo [distutils]                                  > ~/.pypirc;
   echo index-servers=pypi                          >> ~/.pypirc;
   echo [pypi]                                      >> ~/.pypirc;
-  echo repository=https://pypi.python.org/pypi     >> ~/.pypirc;
   echo username=kmike                              >> ~/.pypirc;
   echo password=$PYPIPASSWORD                      >> ~/.pypirc;
   touch .travis_tag;

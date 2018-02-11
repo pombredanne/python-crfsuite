@@ -1,6 +1,24 @@
 Changes
 =======
 
+0.9.5 (2017-09-05)
+------------------
+
+* Python 3.6 wheels for Windows (thanks @fgregg).
+
+0.9.4 (2017-09-04)
+------------------
+
+* Packaging fix (thanks @fgregg).
+
+0.9.3 (2017-09-03)
+------------------
+
+* Fixed compatibility with Python 3.5+ on Windows (thanks @fgregg);
+* CRFSuite C++ library is updated to latest version, this fixes several
+  memory leaks and improves performance (thanks @fgregg);
+* extension is rebuilt with Cython 0.26.1.
+
 0.9.2 (2017-05-04)
 ------------------
 
